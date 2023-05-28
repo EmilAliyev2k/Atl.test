@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20230521-01
+      author: postgres
+      changes:
+        - createTable:
+            tableName: student
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: student_pk
+                    nullable: false
+              - column:
+                  name: student_id
+                  type: VARCHAR(100)
+              - column:
+                  name: full_name
+                  type: VARCHAR(100)
+              - column:
+                  name: age
+                  type: INT
+              - column:
+                  name: phone_number
+                  type: VARCHAR(17)
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+              - column:
+                  name: created
+                  type: datetime
+                  defaultValueDate: now()
